@@ -13,15 +13,17 @@ IMAGE_OVERHEAD_FACTOR ?= "1.0"
 # IMAGE_ROOTFS_SIZE ?= "20480" # 20MB
 IMAGE_ROOTFS_SIZE ?= "81920"
 IMAGE_ROOTFS_EXTRA_SPACE:append = "${@bb.utils.contains("DISTRO_FEATURES", "systemd", " + 4096", "", d)}"
+EXTRA_IMAGE_FEATURES += "splash package-management ssh-server-openssh"
 
 EXTRA_USERS_PARAMS = "\
-		usermod -P 'password' root \
-		"
+	  useradd -p '' manan; \
+    usermod -s /bin/sh manan; \
+	"
 
 python do_display_banner() {
     bb.plain("***********************************************");
     bb.plain("*                                             *");
-    bb.plain("*  				Build Started by meta-manan 				*");
+    bb.plain("*         Build Started by meta-manan         *");
     bb.plain("*                                             *");
     bb.plain("***********************************************");
 }

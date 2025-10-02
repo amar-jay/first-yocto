@@ -1,0 +1,16 @@
+{
+	"python.autoComplete.extraPaths": [
+		"${workspaceFolder}/sources/poky/bitbake/lib",
+		"${workspaceFolder}/sources/poky/meta/lib"
+	],
+	"python.analysis.extraPaths": [
+		"${workspaceFolder}/sources/poky/bitbake/lib",
+		"${workspaceFolder}/sources/poky/meta/lib"
+	],
+	"files.associations": {
+		"*.py": "python",
+		"*.toml": "toml",
+		"*.conf": "bitbake",
+		"*.inc": "bitbake"
+	}
+}
